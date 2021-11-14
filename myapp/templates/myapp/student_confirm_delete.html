@@ -1,0 +1,25 @@
+ {% extends 'myapp/layout.html' %}
+
+{% block titlepage %}
+
+Delete Student ?
+
+{% endblock %}
+
+
+{% block MainContent %}
+
+
+
+<div class="container">
+<br>
+<br>
+
+    <form action=""  method="POST" >
+        {% csrf_token %}
+            <p style=" font-size : 2rem" > Are You Sure You Want To Delete </p>
+            <br>
+            <input type="submit" value="YES" class="btn btn-danger" style=" font-size : 2rem" >
+    </form>
+
+{% endblock %}

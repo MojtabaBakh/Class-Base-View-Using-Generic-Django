@@ -1,0 +1,49 @@
+ {% extends 'myapp/layout.html' %}
+
+{% block titlepage %}
+
+Create Student
+
+{% endblock %}
+
+
+{% block MainContent %}
+
+
+
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+
+    <form action=""  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+
+                    <p class="mylabel">Name : {{form.Name}}</p>
+                    <p class="mylabel">Family : {{form.Family}}</p>
+                    <p class="mylabel">Code : {{form.Code}}</p>
+
+
+
+
+
+        <div class="buttonborder">
+            <button type="submit" class="btn btn-success">Submit!</button>
+
+        </div>
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+
+ {% extends 'myapp/layout.html' %}
+
+{% block titlepage %}
+
+this is Class Base View
+
+{% endblock %}
+
+
+{% block MainContent %}
+
+<style>
+    a{
+        color: #ffffff;
+        text-decoration: underline;
+    }
+
+</style>
+
+
+            </div>
+            <br>
+            <br>
+            
+
+
+                <table class="table table-borded">
+                    <thead>
+                    <tr style=" background-color : green ; color : white ;">
+                        <th>Name</th>
+                        <th>Family</th>
+                        <th></th>
+
+                    </tr>
+                    </thead>
+                    <thead>
+                    {% for student in student_list %}
+                    <tr style=" background-color : green ; color : white ;">
+                        <th><a href="{{student.get_absolute_url}}">{{student.Name}}</a></th>
+                        <th>{{student.Family}}</th>
+                        <th><a href="{% url 'updatestudent' student.id %}">Update </a>/<a href="{% url 'deletestudent' student.id %}"> Delete</a></th>
+
+                    </tr>
+                    {% endfor %}
+                    </thead>
+                
+                
+                
+                </table>
+
+
+
+
+
+<a href="{% url 'createstudent'  %}" class="btn btn-primary " style="float : right ; margin : 20px">Add Student</a>
+
+
+
+
+                
+        </div>
+
+
+
+
+
+
+
+
+{% endblock %}
